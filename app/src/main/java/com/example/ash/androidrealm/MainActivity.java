@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 persons.setId(key);
                 persons.setName(editText1.getText().toString());
                 persons.setEmail(editText2.getText().toString());
-
-                //realm.commitTransaction();
                 getData();
             }
         });
@@ -74,6 +72,6 @@ public class MainActivity extends AppCompatActivity {
         RealmResults<Persons> results = realm.where(Persons.class).findAll();
 
         for (int i = 0 ; i < results.size(); i++)
-            textView.append(results.get(i).id+" : "+results.get(i).getEmail()+" : "+results.get(i).getName());
+            textView.append(" "+results.get(i).id+" : "+results.get(i).getEmail()+" : "+results.get(i).getName());
     }
 }
